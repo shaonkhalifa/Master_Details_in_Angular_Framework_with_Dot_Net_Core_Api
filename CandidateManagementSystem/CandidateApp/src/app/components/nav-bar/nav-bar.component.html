@@ -1,0 +1,42 @@
+
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+               [opened]="false">
+    <mat-toolbar color="darkblue">Menu</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item [routerLink]="['/home']"><mat-icon class="icon">home</mat-icon> Home</a>
+      <a mat-list-item [routerLink]="['/masterdetails']"><mat-icon class="icon">group</mat-icon> Master Details</a>
+      <a mat-list-item [routerLink]="['/masterdetails/Create']"><mat-icon class="icon">create</mat-icon> Create</a>
+      <a mat-list-item [routerLink]="['/course']"><mat-icon class="icon">edit</mat-icon> Edit</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="secondary">
+      <button type="button"
+              aria-label="Toggle sidenav"
+              mat-icon-button
+              (click)="drawer.toggle()">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <!--<spanappTitle</span>-->
+
+      <a mat-button style="color: darkblue;" [routerLink]="['']">
+        Home
+      </a>
+      <a mat-button style="color: darkblue;" [routerLink]="['/masterdetails']">
+        Master
+      </a>
+      <span class="example-spacer"></span>
+      <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+        <mat-icon>favorite</mat-icon>
+      </button>
+
+    </mat-toolbar>
+     <br />
+    
+    <div class="container-fluid">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
